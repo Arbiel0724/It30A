@@ -54,7 +54,7 @@ if($section === 'students'){
     <title>Library System</title>
 </head>
 <body>
-    <style>
+     <style>
 table {
     border-collapse: collapse;
     width: 100%;
@@ -68,6 +68,7 @@ th {
     background-color: #f2f2f2;
 }
 </style>
+</body>
     <h1>Simple Library System</h1>
     <nav>
         <a href="index.php?section=students">Students</a>
