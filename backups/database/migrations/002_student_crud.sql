@@ -50,4 +50,6 @@ UPDATE students
 SET
     student_first_name = 'Arbiel',
     student_last_name = 'Bayantong',
-WHERE student_id = 1;
+WHERE student_id = 1; 
+
+--zz
