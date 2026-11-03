@@ -85,11 +85,8 @@ INSERT INTO students (
 )
 
 VALUES
--- ("BEMY", "LADY", "BSIT"),
--- ("GIOV", "BARS", "BSIT");
-("Shiela", "pearl", "BSIT");
-("Madel", "Macalos", "BSIT");
-
+("bemy", "lady", "BSIT"),
+("hay", "cinth", "BSIT");
 
 
 -- insert statement #2: insert books
@@ -101,8 +98,8 @@ INSERT INTO books (
 )
 
 VALUES
-("THE TRIPLETS FATHER", "KPGREEN", "ROMCOM"),
-("MARRIEN TO UNKNOWN", "PURPLEYAN", "MYSTERY");
+("project", "loki", "FICTION"),
+("super", "base", "MYSTERY");
 
 
 -- insert statement #3: insert borrow

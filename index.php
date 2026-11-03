@@ -383,7 +383,7 @@ if ($section === 'borrows') {
             borrow.book_id,
             books.book_title,
             borrow.borrow_date,
-            borrow.return_date
+            borrow.borrow_return_date
         FROM borrow
         INNER JOIN students
             ON borrow.student_id = students.student_id
@@ -445,7 +445,7 @@ if ($section === 'borrows' && $action === 'create') {
                         SELECT borrow_id
                         FROM borrow
                         WHERE student_id = ?
-                          AND return_date IS NULL
+                          AND borrow_return_date IS NULL
                         LIMIT 1
                     ");
 
@@ -517,9 +517,9 @@ if ($section === 'borrows' && $action === 'update') {
 
         $stmt = $pdo->prepare("
         UPDATE borrow
-            SET return_date = NOW()
+            SET borrow_return_date = NOW()
             WHERE borrow_id = ?
-              AND return_date IS NULL
+              AND borrow_return_date IS NULL
         ");
 
         $stmt->execute([$id]);
@@ -924,15 +924,15 @@ if ($section === 'borrows' && $action === 'update') {
                         <td><?= htmlspecialchars($borrow['borrow_date']) ?></td>
 
                         <td>
-                            <?php if ($borrow['return_date'] === null): ?>
+                            <?php if ($borrow['borrow_return_date'] === null): ?>
                                 Not Returned
                             <?php else: ?>
-                                <?= htmlspecialchars($borrow['return_date']) ?>
+                                <?= htmlspecialchars($borrow['borrow_return_date']) ?>
                             <?php endif; ?>
                         </td>
 
                         <td>
-                            <?php if ($borrow['return_date'] === null): ?>
+                            <?php if ($borrow['borrow_return_date'] === null): ?>
                                 Borrowed
                             <?php else: ?>
                                 Returned
@@ -940,7 +940,7 @@ if ($section === 'borrows' && $action === 'update') {
                         </td>
 
                         <td>
-                            <?php if ($borrow['return_date'] === null): ?>
+                            <?php if ($borrow['borrow_return_date'] === null): ?>
 
                                 <a
                                     href="index.php?section=borrows&action=update&id=<?= $borrow['borrow_id'] ?>"
