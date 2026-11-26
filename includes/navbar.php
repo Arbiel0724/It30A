@@ -19,8 +19,7 @@ function navActive($section,$currentSection){
         flex-wrap: wrap;
         gap:1rem;
         font-family: Roboto,system-ui,-apple-system, sans-serif;
-    }
-
+    }  
     .app-header h1{
         font-weight: 400;
         font-size: 1.8rem;
